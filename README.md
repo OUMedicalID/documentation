@@ -1,11 +1,8 @@
-
 <p align="center">
-  <img src="https://i.imgur.com/frzDe3U.png" alt="Sublime's custom image" style="width: 300px"/>
+  <img src="https://i.imgur.com/frzDe3U.png" alt="Sublime's custom image" width="300"/>
 </p>
+
 # Medial ID
-
-
-
 Medical ID is our capstone project created during the Winter 2021 semester. Medical ID's purpose is to make it easier and secure to transfer confidential patient information to doctors offices and other medical institutions through the use of Near Field Communication (NFC). 
 
 Users will simply go near a Raspberry Pi and activate NFC to have their information quickly and securely collected rather than having to film out a large form.
