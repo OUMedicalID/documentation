@@ -81,5 +81,11 @@ It is important for any application that deals with sensitive medical informatio
  
 
 # NFC Setup
-
 To be done later....
+
+# Raspberry Pi Web Server
+To be done later...
+
+# Ways To Improve and Future Ideas 
+
+To be done later...
