@@ -1,4 +1,10 @@
+
+<p align="center">
+  <img src="https://i.imgur.com/frzDe3U.png" alt="Sublime's custom image" style="width: 300px"/>
+</p>
 # Medial ID
+
+
 
 Medical ID is our capstone project created during the Winter 2021 semester. Medical ID's purpose is to make it easier and secure to transfer confidential patient information to doctors offices and other medical institutions through the use of Near Field Communication (NFC). 
 
@@ -7,14 +13,13 @@ Users will simply go near a Raspberry Pi and activate NFC to have their informat
 # Technologies Used
 To demonstrate sufficient knowledge in Computer Science and Information Technology, this project utilized many technologies and programming languages. Below is a list of all technologies and programming languages used.
 
-**Front End Development**: HTML, CSS, JavaScript, Bootstrap, React
-**Back End Development**: PHP
-**Mobile Application Development**: iOS (Swift) and Android (Java)
-**Databases**: SQL (mySQL software)
-**Operating Systems**: Debian and Raspbian (Linux distributions)
-**Other Programming Languages**: Python
-**Other Knowledge**: Deploying a virtual private server, running a web server behind CloudFlare, configuring a [LAMP](https://www.ibm.com/cloud/learn/lamp-stack-explained) stack, AES encryption and good security practices
-
+ - **Front End Development**: HTML, CSS, JavaScript, Bootstrap, React
+ - **Back End Development**: PHP
+ - **Mobile Application Development**: iOS (Swift) and Android (Java)
+  - **Databases**: SQL (mySQL software)
+  - **Operating Systems**: Debian and Raspbian (Linux distributions)
+  - **Other Programming Languages**: Python
+  - **Other Knowledge**: Deploying a virtual private server, running a web server behind CloudFlare, configuring a [LAMP](https://www.ibm.com/cloud/learn/lamp-stack-explained) stack,AES encryption and good security practices
 
 # Mobile Applications
 
