@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/Bi0bBHo.png" alt="Download on the App Store" width="200"/> <img src="https://i.imgur.com/SRaTjEN.png" alt="Download on the App Store" width="215"/>
+  <a href="https://apps.apple.com/us/app/medid-quick-medical-info/id1549310307"><img src="https://i.imgur.com/Bi0bBHo.png" alt="Download on the App Store" width="200"/></a> <a href="https://play.google.com/store/apps/details?id=edu.oaklandstudent.medicalid"><img src="https://i.imgur.com/SRaTjEN.png" alt="Download on the Play Store" width="215"/></a>
 </p>
 
 # Medial ID
