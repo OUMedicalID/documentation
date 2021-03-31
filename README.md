@@ -1,6 +1,10 @@
 
 <p align="center">
-  <img src="https://i.imgur.com/frzDe3U.png" alt="Sublime's custom image" width="300"/>
+  <img src="https://i.imgur.com/frzDe3U.png" alt="logo" width="300"/>
+</p>
+
+<p align="center">
+  <img src="https://i.imgur.com/Bi0bBHo.png" alt="Download on the App Store" width="200"/> <img src="https://i.imgur.com/SRaTjEN.png" alt="Download on the App Store" width="215"/>
 </p>
 
 # Medial ID
