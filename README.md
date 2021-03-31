@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="https://i.imgur.com/frzDe3U.png" alt="Sublime's custom image" width="300"/>
 </p>
@@ -81,11 +82,39 @@ It is important for any application that deals with sensitive medical informatio
  
 
 # NFC Setup
-To be done later....
+
+
+
+The Near Field Communication (NFC) functionality was an integral part of this project and could be considered the most difficult part of the project. Our choice for an NFC reader was the PN-532 NFC module. This module is able to write to NFC cards as well as NFC tags in various formats.
+
+One major setback that we came across is that it would not be easy to implement proper functionality with iOS devices. The reason for this is Apple does not provide an API for Host Card Emulation (HCE). Typically, NFC readers including the ones at many retail stores can only detect compatible tags and cards. For a phone to be recognized, it needs to pretend to be a NFC tag or card which is the essence of HCE. It is possible to utilize HCE with Android devices, but not with Apple devices. The functionality exists, but no API is made available for iOS. One speculative reason for this is that Apple does not want 3rd party payment applications competing with Apple Pay. HCE functionality exists in iOS and is specifically utilized by Apple Pay. Because Android has an API for HCE, this has allowed for other payment applications such as Samsung Pay and LG pay. 
+
+**Because of this hurdle with iOS, we developed an innovative and reliable workaround that is compatible with both iOS and Android platforms. Placed on top of the PN-532 module is a small NFC tag that is what users actually write to.** (Note that iOS supports writing to actual tags, not not simulating them which is what HCE would do.) Once users write to the tag, the PN-532 reads the NFC tag that's on top of it and clears it right after to prevent anyone else from attempting to read from it. In addition to the PN-532 NFC module, we have an SR-04 ultrasonic distance sensor that is actively used with the PN-532. When the SR-04 detects that an object (a phone) is nearby, it temporarily disables reading for the PN-532 so that there is no interference when a user tries to write to the NFC tag that is on top of the PN-532. Without this feature, the tag would not be writeable. As soon as the SR-04 sees that there is no longer an object in front of it, it will read the tag and clear it right after. 
+
+Both the iOS application and Android application encode the NFC tags with NFC Data Exchange Format (NDEF) format and creates a single record with the string `[[encryptedEmail:sha512OfPassword]]`. The `encryptedEmail` portion  is the user's AES-encrypted email address that serves as the primary key in the database, and the sha512OfPassword portion is the user's password hashed with SHA-512 that serves as the key for AES encryption and decryption. Below is an example of a NDEF record that the mobile application try to write to the NFC tag:
+
+    [[30AE621F292899FFD791DE2F8F8A3DE6AEFC83BA047DE5388CDD6D1238546FB9:049FE98190302258F92FE7091AEC6B2C3EE7943CF004D2E69ADDB1BDF008A104B321988D910B3A05DE1D861ECCC600ED7D3E631B02A5829A4B29728C7B57339C]]
+
+
+This is the only time that the user's hashed password ever leaves their smartphone as it is needed for the raspberry pi to decrypt their medical information after pulling it without the encrypted email. Although SHA512 is a strong hashing algorithm, the raspberry pi will never save it for security purposes and as mentioned previously, the data on the NFC tag is quickly wiped after it is successfully read.
+
+With a successful scan, our GUI application would greet the user and proceed to save securely save their information locally on the raspberry pi for the medical staff to look at and/or export. They are considered to be checked in at the medical institution. Once a user's smartphone is placed near the NFC module and it writes to the NFC tag, the rest of process of takes less than a few seconds.
+
+
+<p align="center">
+  <img src="https://i.imgur.com/dMFJNk5.jpg" alt="PN532" width="500"/>
+  
+<p style="font-size: 6px !important;">Pictured to the left is an PN-532 module. To the right is an SR-04 ultrasonic sensor.</p>
 
 # Raspberry Pi Web Server
 To be done later...
 
 # Ways To Improve and Future Ideas 
 
-To be done later...
+We believe that we have made some great achievements with this project which includes NFC writing compatibility with iOS devices as well as writing mobile applications for iOS and Android and successfully publishing them to the app store. Nevertheless, there were some more features that we would have liked to implement had we not had any time constraints as well as an ongoing pandemic.
+
+Below are some of the features and/or ideas:
+* Disk encryption for the raspberry pi
+* Allowing medical organizations to customize the information that the users would need to fill out.
+* A two-factor-authentication (2FA) feature with Google Authenticator or through SMS verification with the Twilio API.
+* SMS  notifications upon new login activity.
