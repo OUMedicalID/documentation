@@ -4,6 +4,7 @@
   <img src="https://i.imgur.com/frzDe3U.png" alt="logo" width="300"/>
 </p>
 
+
 <p align="center">
   <a href="https://apps.apple.com/us/app/medid-quick-medical-info/id1549310307"><img src="https://i.imgur.com/Bi0bBHo.png" alt="Download on the App Store" width="200"/></a> <a href="https://play.google.com/store/apps/details?id=edu.oaklandstudent.medicalid"><img src="https://i.imgur.com/SRaTjEN.png" alt="Download on the Play Store" width="215"/></a>
 </p>
@@ -12,6 +13,10 @@
 Medical ID is our capstone project created during the Winter 2021 semester. Medical ID's purpose is to make it easier and secure to transfer confidential patient information to doctors offices and other medical institutions through the use of Near Field Communication (NFC). 
 
 Users will simply go near a Raspberry Pi and activate NFC to have their information quickly and securely collected rather than having to film out a large form.
+
+# Documentation Sections
+* [Technologies Used](#technologies-used)
+
 
 # Technologies Used
 To demonstrate sufficient knowledge in Computer Science and Information Technology, this project utilized many technologies and programming languages. Below is a list of all technologies and programming languages used.
