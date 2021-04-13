@@ -1,4 +1,5 @@
 
+
 <p align="center">
   <img src="https://i.imgur.com/frzDe3U.png" alt="logo" width="300"/>
 </p>
@@ -122,3 +123,13 @@ Below are some of the features and/or ideas:
 * Allowing medical organizations to customize the information that the users would need to fill out.
 * A two-factor-authentication (2FA) feature with Google Authenticator or through SMS verification with the Twilio API.
 * SMS  notifications upon new login activity.
+* Automatically create a backup of the database on the raspberry pi and upload it online somewhere (Shouldn't matter where since data is encrypted.)
+
+
+# Credits
+Below is a list of all the libraries we used for each component of our project as well as a short description of the purpose.
+**iOS Application**
+|Library Name|Description |Link|
+|--|--|--|
+|NFCReaderWriter|Library that utilizes Apple's API to write to an NFC tag.|https://github.com/janlionly/NFCReaderWriter|
+
