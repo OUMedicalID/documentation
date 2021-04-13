@@ -128,8 +128,28 @@ Below are some of the features and/or ideas:
 
 # Credits
 Below is a list of all the libraries we used for each component of our project as well as a short description of the purpose.
+
 **iOS Application**
+
 |Library Name|Description |Link|
 |--|--|--|
 |NFCReaderWriter|Library that utilizes Apple's API to write to an NFC tag.|https://github.com/janlionly/NFCReaderWriter|
+|Eureka|Allows for an easy way to make forms.|https://github.com/xmartlabs/Eureka/
+|CryptoSwift|Used for the AES encryption functions|https://github.com/krzyzanowskim/CryptoSwift
+|BiometricAuthentication|Used for the biometrics feature which requires device user to authenticate via touchID or faceID.|https://github.com/rushisangani/BiometricAuthentication
 
+**Android Application**
+
+|Library Name|Description |Link|
+|--|--|--|
+|kFormMaster|Library used for creating some of the forms where users enter their info.|https://github.com/TheJuki/KFormMaster|
+|password-strength-checker-android|Used to show users their password strength at time of sign up.|https://github.com/yesterselga/password-strength-checker-android
+|Biometric-Auth-Sample|Used for the biometric setting that requires the user to input their fingerprint if the setting is enabled.|https://github.com/anitaa1990/Biometric-Auth-Sample
+
+
+**Raspberry Pi Local Server (Local Web Server)**
+|Library Name|Description |Link|
+|--|--|--|
+|BootStrap|Popular CSS framework that was used for the website design.|https://getbootstrap.com/|
+|Simplexlsxgen|Used to help generate the excel files that contain all patient info.  |https://github.com/shuchkin/simplexlsxgen
+|secure-spreadsheet|Secures excel files with a password. Once all patient data is placed in an excel file, we use this library to set a password on the excel file and the one with the password is what's provided to medical staff.|https://github.com/ankane/secure-spreadsheet
