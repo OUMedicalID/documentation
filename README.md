@@ -16,6 +16,13 @@ Users will simply go near a Raspberry Pi and activate NFC to have their informat
 
 # Documentation Sections
 * [Technologies Used](#technologies-used)
+* [Mobile Applications](#mobile-applications)
+* [Mobile Application Security](#mobile-application-security)
+* [HIPAA Compliance](#hipaa-compliance)
+* [NFC Setup](#nfc-setup)
+* [Raspberry Pi Web Server](#raspberry-pi-web-server)
+* [Ways To Improve and Future Ideas](#ways-to-improve-and-future-ideas)
+* [Credits](#credits)
 
 
 # Technologies Used
