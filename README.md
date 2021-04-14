@@ -165,6 +165,8 @@ Below is a list of all the libraries we used for each component of our project a
 |BootStrap|Popular CSS framework that was used for the website design.|https://getbootstrap.com/|
 |Simplexlsxgen|Used to help generate the excel files that contain all patient info.  |https://github.com/shuchkin/simplexlsxgen
 |secure-spreadsheet|Secures excel files with a password. Once all patient data is placed in an excel file, we use this library to set a password on the excel file and the one with the password is what's provided to medical staff.|https://github.com/ankane/secure-spreadsheet
+|wkhtmltopdf|Program that converts html files to pdf files. Used to convert record pages of individuals to pdf.|https://wkhtmltopdf.org/
+|PDF Toolkit| PDF Toolkit (pdftk) is a tool with many features for modifying PDFs. We use it to add a password the patient PDF files.|https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
 
 **Raspberry Pi (NFC)**
