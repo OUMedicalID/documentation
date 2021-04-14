@@ -165,3 +165,9 @@ Below is a list of all the libraries we used for each component of our project a
 |BootStrap|Popular CSS framework that was used for the website design.|https://getbootstrap.com/|
 |Simplexlsxgen|Used to help generate the excel files that contain all patient info.  |https://github.com/shuchkin/simplexlsxgen
 |secure-spreadsheet|Secures excel files with a password. Once all patient data is placed in an excel file, we use this library to set a password on the excel file and the one with the password is what's provided to medical staff.|https://github.com/ankane/secure-spreadsheet
+
+
+**Raspberry Pi (NFC)**
+|Library Name|Description |Link|
+|--|--|--|
+|nfcpy|Python library that allows for connecting to and working with the PN532 NFC module.|https://github.com/nfcpy/nfcpy|
