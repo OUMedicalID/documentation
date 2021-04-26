@@ -1,5 +1,6 @@
 
 
+
 <p align="center">
   <img src="https://i.imgur.com/frzDe3U.png" alt="logo" width="300"/>
 </p>
@@ -124,7 +125,20 @@ With a successful scan, our GUI application would greet the user and proceed to 
 <p style="font-size: 6px !important;">Pictured to the left is an PN-532 module. To the right is an SR-04 ultrasonic sensor.</p>
 
 # Raspberry Pi Web Server
-To be done later...
+The raspberry pi web server is what medical staff use to access patient data that was provided by patients via NFC. If a medical institution were to utilize Medical ID, they would get their own raspberry pi that comes with it's own web server and mySQL database that is independent of any other institution. This web server is essentially only accessible on the intranet.
+
+Before the raspberry pi web server can be used for the first time, the administrator of the medical institution must create an account. This will be known as the admin account. In addition to basic features such as viewing patients and downloading records, the administrator account is responsible for creating new users and adjusting the timeout setting (length of inactivity before staff are automatically logged out).
+
+The local web server also employs an encryption scheme to protect patient information and ensure confidentially. When the admin account is first created, a public key and private key pair are generated using [libSodium](https://github.com/jedisct1/libsodium). The public key is stored plainly in the database while the private key is encrypted with AES-256-CBC with the admin's sha512-hashed password serving as the key. This encrypted private key is then in the a column associated with the admin's account. This means that the private key is safe and can only be accessed by the admin. When a new user needs to be created by the admin, the private key is decrypted by the admin and then it is re-encrypted by with the new user's password serving as the key. Each medical personnel will have their own encrypted version of the private key.
+
+Upon logging in, the user's hashed password in sha512 is stored in a session variable and is used to decrypt the private key for utilization when needed. In turn this will allow for the private key to be utilized to decrypt patient records.
+
+When a user initiates an NFC scan, they provide the pi with their record ID and the decryption key for decrypting their data. From there, a POST request is made to the global web server to obtain the encrypted records based off the record ID and from there the raspberry pi attempts to decrypt those records with the decryption key that was also provided through NFC. If successful, another secure POST request is now made to a localhost API with the plaintext records. The API encrypts all of the data with the public key and saves the data to the database. From here any medical personnel is able to decrypt the data with the private key.
+
+![Creating an admin account and submitting records via NFC flowchart](https://i.imgur.com/Wf8qOED.png)
+
+In addition to allowing medical personnel to view patient data, they are given the option of downloading an individual patient's records as a password-protected PDF or they can select from a date range and download all patient records from within that date range as a password-protected excel file. A few libraries are used for this functionality. Both PDF and Excel files are given random passwords and cryptopgrahically random passwords are generated as opposed to using a simple random function.
+
 
 # Ways To Improve and Future Ideas 
 
@@ -151,7 +165,6 @@ Below is a list of all the libraries we used for each component of our project a
 |BiometricAuthentication|Used for the biometrics feature which requires device user to authenticate via touchID or faceID.|https://github.com/rushisangani/BiometricAuthentication
 
 **Android Application**
-
 |Library Name|Description |Link|
 |--|--|--|
 |kFormMaster|Library used for creating some of the forms where users enter their info.|https://github.com/TheJuki/KFormMaster|
@@ -167,6 +180,7 @@ Below is a list of all the libraries we used for each component of our project a
 |secure-spreadsheet|Secures excel files with a password. Once all patient data is placed in an excel file, we use this library to set a password on the excel file and the one with the password is what's provided to medical staff.|https://github.com/ankane/secure-spreadsheet
 |wkhtmltopdf|Program that converts html files to pdf files. Used to convert record pages of individuals to pdf.|https://wkhtmltopdf.org/
 |PDF Toolkit| PDF Toolkit (pdftk) is a tool with many features for modifying PDFs. We use it to add a password the patient PDF files.|https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+|libSodium|Cryptographic library used for generating public and private keys as well as utilizing them to encrypt and decrypt data.|https://github.com/jedisct1/libsodium|
 
 
 **Raspberry Pi (NFC)**
